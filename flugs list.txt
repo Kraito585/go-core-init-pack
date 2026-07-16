@@ -1,0 +1,119 @@
+Telemetry метка     core:telemetry
+- /core/config/core_config.go по метке
+- /core/pkg/kafka/outbox_relay.go по метке
+- /core/pkg/kafka/state_replicator.go по метке
+- /core/pkg/kafka/task_processor.go по метке
+- /core/pkg/postgres/postgres.go по метке
+- /core/pkg/redis/redis.go по метке
+- /internal/app/app.go по метке
+- /internal/service/* фсе файлы по метке
+- /internal/handler/* фсе файлы по метке
+- /internal/middleware/ по метке
+- /core/pkg/coretelemetry дерикторию
+- /internal/middleware/pkg/metrics.go файл
+- /internal/middleware/pkg/tracing.go файл
+
+
+
+сделать в гайде описание как работать с proto
+gRPC метка core:grpc
+- /core/config/core_config.go по метке
+- /internal/app/app.go по метке
+- /cmd/api/main.go по метке
+- /api дериктория
+- /internal/service/user.go файл
+
+
+
+PostgreSQL метка core:postgresql
+- /core/config/core_config.go по метке
+- /core/pkg/health/health.go по метке
+- /internal/repository/* фсе файлы по метке
+- /core/pkg/kafka/state_replicator.go по метке
+- /internal/app/app.go по метке
+- /cmd/api/main.go по метке
+- /core/pkg/kafka/outbox_relay.go файл
+- /core/pkg/coretelemetry/pgx_tracer.go файл
+- /core/pkg/migrate/ дериктория
+- /migrations/* все файлы внутри дериктории
+
+
+
+Migrations метка core:postgresql:Migrations
+- /core/pkg/health/health.go по метке
+- /core/pkg/migrate/ дериктория
+- /internal/app/app.go по метке
+- /migrations/* все файлы внутри дериктории
+
+
+
+Kafka метка core:kafka
+- /core/config/core_config.go по метке 
+- /core/pkg/health/health.go по метке
+- /internal/app/app.go по метке
+- /cmd/api/main.go по метке
+- /core/pkg/coretelemetry/kafka_wrapper.go файл
+- /internal/handler/replicator_handler.go файл
+- /internal/handler/task_handler.go файл
+- /internal/repository/replicator_repository.go файл
+- /internal/repository/task_repository.go файл
+- /internal/service/replicator_service.go файл
+- /internal/service/task_service.go файл
+- /migrations/000001_init.down.sql файл
+- /migrations/000001_init.up.sql файл
+- /migrations/000002_kafka_outbox.up.sql файл
+- /core/pkg/kafka дериктория
+
+
+добавить в зависимости outbox relay postgresql
+Outbox Relay метка core:kafka:OutboxRelay
+- /core/config/core_config.go по метке
+- /core/pkg/kafka/outbox_relay.go файл
+- /core/pkg/health/health.go по метке
+- /internal/app/app.go по метке
+- /cmd/api/main.go по метке
+- /migrations/000002_kafka_outbox.up.sql файл
+
+
+
+
+Task Processor метка core:kafka:TaskProcessor
+- /core/config/core_config.go по метке
+- /core/pkg/health/health.go по метке
+- /internal/app/app.go по метке
+- /cmd/api/main.go по метке
+- /core/pkg/kafka/task_processor.go файл
+- /internal/handler/task_handler.go файл
+- /internal/repository/task_repository.go файл
+- /internal/service/task_service.go файл
+
+
+
+State Replicator метка core:kafka:StateReplicator
+- /core/config/core_config.go по метке
+- /internal/app/app.go по метке
+- /cmd/api/main.go по метке
+- /core/pkg/health/health.go по метке
+- /core/pkg/kafka/state_replicator.go файл
+- /core/pkg/health/sync_checker.go файл
+- /internal/handler/replicator_handler.go файл
+- /internal/repository/replicator_repository.go файл
+- /internal/service/replicator_service.go файл
+- /migrations/000001_init.down.sql файл
+- /migrations/000001_init.up.sql файл
+
+
+
+установить в зависимости threshold(Sync Check) telemetry, postgres
+Sync Check метка core:kafka:StateReplicator:SyncCheck
+- /internal/app/app.go по метке
+- /core/pkg/health/sync_checker.go файл
+- /core/pkg/kafka/state_replicator.go по метке
+
+
+redis метка core:redis
+- /core/config/core_config.go по метке
+- /core/pkg/health/health.go по метке
+- /core/pkg/redis дериктория
+- /internal/app/app.go по метке
+- /internal/repository/* фсе файлы по метке
